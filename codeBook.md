@@ -3,13 +3,13 @@
 ##Study design  
 This section explains where the Raw-Data comes from and whitch steps are performed to get the Summary-Dataset (summary_data.csv)
 
-* ###Download an extract the Raw-Data
+* **Download an extract the Raw-Data**
     + Check if directory "data" exists in curent directory and creates it if not.
     + Check if the fiel "data/prjectfiles.zip" exists. If not, download file   
 "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"  
 and save it as "data/prjectfiles.zip"
     + Unzip the Raw-Data into the "data" directory 
-* ### Read and merge the train and test data
+* **Read and merge the train and test data**
 	+ Read the file "data/UCI HAR Dataset/features.txt" and store the data in a character vector "features". This file contains the labels for all features   
 	and are used as column headers for the train and test dataset. 
 	+ Read the file "data/UCI HAR Dataset/activity_labels.txt". This file contains the labels for all activities  
@@ -32,7 +32,7 @@ and save it as "data/prjectfiles.zip"
 		+ Row-Bind the train and test subjects to make a union -> "subject Data"
 		+ Column-Bind "subject Data", "y Data"  and "x Data" to create  a single Dataset
  	+ The "factor" function is used to encode the activity numbers. The labels for the levels are stored in the "activity_lables" vector
-* ### Create a second Data set with the average of each variable
+* **Create a second Data set with the average of each variable**
 	+ Calculate the Average of each Variable grouped by subject and activity
 	+ Append "_mean : number [-1..1]" to each column name to name the new Variables
 	+ Save the the result Dataset as csv-file named "summary_data.csv" with "," as separator
@@ -44,7 +44,7 @@ This Section contains all variables in the file summary_data.csv.
 It contains 181 rows including one header row and 81 Columns.
 
 
-* ###Variables:
+* **Variables:**
 +	subject : integer [1..30]
 +	activity : Factor with 6 levels [1 WALKING, 2 WALKING_UPSTAIRS, 3 WALKING_DOWNSTAIRS, 4 SITTING, 5 STANDING, 6 LAYING] 
 +	tBodyAcc-mean()-X_mean : numeric [-1..1]
