@@ -1,7 +1,6 @@
 # This File contains all Function for getting and prepare the Data
 # needet fpor the Course Project
 library(data.table)
-library(dplyr)
 library(httr)
 
 # This function Downloads the raw-Data as zip and extrakt them
@@ -12,11 +11,11 @@ if(!dir.exists("data")) { dir.create("data") }
 if(!file.exists(file)) { download.file(url,file) }
 
 # check if extrakted
-if(!dir.exists("data/UCI HAR Dataset")) { 
+#if(!dir.exists("data/UCI HAR Dataset")) { 
     print("Unzip Data ...")
     unzip(file, exdir = "data")
     print("Unzip complete")
-}
+#}
 print("Raw Data is now avilable.")
 
 
@@ -26,7 +25,7 @@ features <- fread("data/UCI HAR Dataset/features.txt")
 activity_labels <- fread("data/UCI HAR Dataset/activity_labels.txt")
 
 # select the column names that we want to keep
-colNumbersToKeep <- grep("-((mean)|(std))\\(\\)", features$V2, value = FALSE)
+colNumbersToKeep <- grep("-((mean(Freq)?)|(std))\\(\\)", features$V2, value = FALSE)
 
 # read the measurement
 trainXData <- fread("data/UCI HAR Dataset/train/X_train.txt"
@@ -53,7 +52,7 @@ yData <- rbind(trainYData,testYData)
 xData <- rbind(trainXData,testXData) 
 subjectData <- rbind(trainSubjectData, testSubjectData)
 
-# join subhect, activity and measurements
+# join subject, activity and measurements
 mergedData <- cbind(subjectData, yData, xData)
 
 # use "factor" to encode the activity-row as a factor
@@ -69,3 +68,4 @@ colnames(summary_data)[-c(1:2)] <- paste(colnames(summary_data)[-c(1:2)]
                                          ,"_mean",sep="")
 # save the result as csv-file 
 write.table(summary_data, "./summary_data.csv", sep = ",", row.names = FALSE)
+print("summary_data.csv is now avilable.")
