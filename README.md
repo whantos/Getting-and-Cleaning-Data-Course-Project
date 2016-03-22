@@ -55,7 +55,7 @@ and save it as "data/prjectfiles.zip"
  	+ The "factor" function is used to encode the activity numbers. The labels for the levels are stored in the "activity_lables" vector
 * **Create a second Data set with the average of each variable**
 	+ Calculate the Average of each Variable grouped by subject and activity
-	+ Append "_mean : number [-1..1]" to each column name to name the new Variables
+	+ Append "_mean" to each column name to name the new Variables
 	+ Save the the result Dataset as csv-file named "summary_data.txt" 
  
 
