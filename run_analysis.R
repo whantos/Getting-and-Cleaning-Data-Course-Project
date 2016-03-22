@@ -16,7 +16,7 @@ if(!file.exists(file)) { download.file(url,file) }
     unzip(file, exdir = "data")
     print("Unzip complete")
 #}
-print("Raw Data is now avilable.")
+print("Raw Data is now available.")
 
 
 # read the variable-labels
@@ -68,4 +68,4 @@ colnames(summary_data)[-c(1:2)] <- paste(colnames(summary_data)[-c(1:2)]
                                          ,"_mean",sep="")
 # save the result as csv-file 
 write.table(summary_data, "./summary_data.txt", row.names = FALSE)
-print("summary_data.txt is now avilable.")
+print("summary_data.txt is now available.")

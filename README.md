@@ -39,14 +39,14 @@ and save it as "data/prjectfiles.zip"
 	just the Columns that contains the mean and standard deviation for each measurement. To get just the wanted Columns  
 	this regexp is used : `"-((mean(Freq)?)|(std))\\(\\)"`
 	+ Read the train and test data
-		+ The traindata is avilable in the file "data/UCI HAR Dataset/train/X_train.txt"
-		+ The testdata is avilable in the file "data/UCI HAR Dataset/test/X_test.txt"
+		+ The traindata is available in the file "data/UCI HAR Dataset/train/X_train.txt"
+		+ The testdata is available in the file "data/UCI HAR Dataset/test/X_test.txt"
 		+ The files are read with the fread function from the "data.table" package
 			+ To select just the needed columns, the select argument is set to the "colNumbersToKeep" Vector
 			+ The col.names argument is set to the "feature" vector to add Column names.
 	+  Read the "subjects" for the train and test data
-		+ The subjects for the traindata is avilable in the file "data/UCI HAR Dataset/train/subject_train.txt"
-		+ The subjects for the testdata is avilable in the file "data/UCI HAR Dataset/test/subject_test.txt"
+		+ The subjects for the traindata is available in the file "data/UCI HAR Dataset/train/subject_train.txt"
+		+ The subjects for the testdata is available in the file "data/UCI HAR Dataset/test/subject_test.txt"
 	+ Merge the Data
 		+ Row-Bind the train and test activitys to make a union -> "y Data"
 		+ Row-Bind the train and test Data to make a union -> "x Data"
