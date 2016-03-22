@@ -17,5 +17,5 @@ This document describes all Files in this project
     This Section contains all variables used summary_data.csv
 * **./run_analysis.R**  
     This file contains the R-Script to create the summary_data.csv file.
-* **./summary_data.csv**  
+* **./summary_data.txt**  
     This is the result-set. It contains the average of each variable for each activity and each subject.

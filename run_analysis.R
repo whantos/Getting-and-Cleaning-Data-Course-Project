@@ -67,5 +67,5 @@ summary_data <- mergedData[,lapply(.SD, mean), by=c("subject","activity")]
 colnames(summary_data)[-c(1:2)] <- paste(colnames(summary_data)[-c(1:2)]
                                          ,"_mean",sep="")
 # save the result as csv-file 
-write.table(summary_data, "./summary_data.csv", sep = ",", row.names = FALSE)
-print("summary_data.csv is now avilable.")
+write.table(summary_data, "./summary_data.txt", row.names = FALSE)
+print("summary_data.txt is now avilable.")

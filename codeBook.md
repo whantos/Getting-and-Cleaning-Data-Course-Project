@@ -35,12 +35,12 @@ and save it as "data/prjectfiles.zip"
 * **Create a second Data set with the average of each variable**
 	+ Calculate the Average of each Variable grouped by subject and activity
 	+ Append "_mean : number [-1..1]" to each column name to name the new Variables
-	+ Save the the result Dataset as csv-file named "summary_data.csv" with "," as separator
+	+ Save the the result Dataset as csv-file named "summary_data.txt" 
  
 
 		
 ##Code book  
-This Section contains all variables in the file summary_data.csv.  
+This Section contains all variables in the file summary_data.txt.  
 It contains 181 rows including one header row and 81 Columns.
 
 
